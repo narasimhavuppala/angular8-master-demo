@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  //Event Binding
   title = 'demo-project';
+
+  changeMe(){
+    this.title="Changed Title";
+  }
 }
