@@ -7,10 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  //Event Binding
+  // Event Binding
   title = 'demo-project';
 
-  changeMe(){
-    this.title="Changed Title";
+  isShow = false;
+
+  btnLabel = 'Hide';
+
+  // People Names Array
+  people: any[] = [];
+
+  addPerson(namex: string) {
+    this.people.push({ name: namex });
+  }
+
+  toggle() {
+    this.isShow = !this.isShow;
+    this.btnLabel = this.isShow ? 'Show' : 'Hide';
   }
 }
