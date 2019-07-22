@@ -8,21 +8,52 @@ import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms'
 })
 export class ModelDrivenComponent implements OnInit {
 
-  loginForm: FormGroup;
-
+  myForm: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.loginForm = this.fb.group({
-      username: ['', [Validators.min(3), Validators.max(12)]],
-      password: ['']
+    const phone = this.fb.group({
+      area: [],
+      prefix: [],
+      line: []
+    });
+
+    this.myForm = this.fb.group({
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+      password: ['', [
+        Validators.required,
+        Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$')
+      ]],
+      age: [null, [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.min(18),
+        Validators.max(65)
+      ]],
+      agree: [false, [
+        Validators.requiredTrue
+      ]]
     });
   }
 
-  onSubmit() {
+  get email() {
+    return this.myForm.get('email');
+  }
 
-    console.log(this.loginForm.value);
+  get password() {
+    return this.myForm.get('password');
+  }
+
+  get age() {
+    return this.myForm.get('age');
+  }
+
+  get agree() {
+    return this.myForm.get('agree');
   }
 
 }
