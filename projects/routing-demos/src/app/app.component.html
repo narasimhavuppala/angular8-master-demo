@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="form-group">
+            <ul class="nav nav-tabs">
+                <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <!-- makes angular match exactly what the route is-->
+                    <a routerLink="/">Home</a></li>
+                <li><a routerLink="servers">Servers</a></li>
+                <li><a [routerLink]="['users']">Users</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid">
+
+        <router-outlet></router-outlet>
+
+
+    </div>
+</div>
