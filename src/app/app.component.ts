@@ -32,11 +32,12 @@ export class AppComponent {
 
   addPerson(namex: string) {
     this.people.push({ name: namex });
+    console.log(this.people)
   }
 
   toggle() {
     this.isShow = !this.isShow;
-    this.btnLabel = this.isShow ? 'Show' : 'Hide';
+    this.btnLabel = this.isShow ? 'Show' : 'Hide';//Ternary Operator
   }
 
   greet(name: string) {
@@ -44,6 +45,6 @@ export class AppComponent {
   }
 
   changeMe(){
-    this.title="Updated title At: " + Date.now();
+    this.title="Updated title At: " + Date.now(); //Epoch Seconds
   }
 }

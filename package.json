@@ -6,6 +6,7 @@
     "start": "ng serve",
     "start-froms-demo": "ng serve forms-demo",
     "build": "ng build",
+    "build:dev": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
