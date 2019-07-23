@@ -1,53 +1,72 @@
-<h2> Data Binding</h2>
+<h2>Pipes Demo</h2>
+<div class="container">
 
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title|uppercase }}!
-  </h1>
+  {{amount|currency}}
+  <br />
+  {{percentpipedemo|percent}}
+
+
+  <p>pi (3.1-5): {{pi | number:'3.1-5'}}</p>
+
+  <!--output '003.14000'-->
+  <p>pi (3.5-5): {{pi | number:'3.5-5'}}</p>
+
+  <!--output '-3' / unlike '-2' by Math.round()-->
+  <p>-2.5 (1.0-0): {{-2.5 | number:'1.0-0'}}</p>
+
 </div>
 
 
-{{amount|currency}}
+<h3>Data Binding</h3>
 
-<button class="btn-primary" id="change Title" (click)="changeMe()">
-  Change Title
-</button>
-<h2> *ngFor Demo</h2>
-<ul>
-  <li *ngFor="let person of people; let i = index">
-    {{ i + 1 }} - {{ person.name }}
-  </li>
-</ul>
-Name :<input type="text" #namex /> <!--Template Reference Variable-->
+<div class="container">
+
+  <br />
+  {{title}}
+
+  <br />
+  <button class="btn-primary" id="change Title" (click)="changeMe()">
+    Change Title
+  </button>
+
+</div>
+
+
+<h2> Directives Demo</h2>
+<div class="container">
+
+  <h3>ngFor Demo</h3>
+  <ul>
+    <li *ngFor="let person of people; let i = index">
+      {{ i + 1 }} - {{ person.name }}
+    </li>
+  </ul>
+  Name :<input type="text" #namex />
+  <!--Template Reference Variable-->
+  <br />
+
+
+
+  <button class="btn-primary" (click)="addPerson(namex.value)"> Add people</button>
+  <br />
+  {{name}}
+
+
+  <br />
+
+  <h2> NgIf Demo </h2>
+
+  <p [hidden]="isShow"> Show text</p>
+
+  <br />
+  <button class="btn-success" (click)="toggle()">{{btnLabel}}</button>
+  <br />
+</div>
+
 <br />
 
-
-
-<button class="btn-primary" (click)="addPerson(namex.value)"> Add people</button>
-<br />
-{{name}}
-
-
-<br />
-
-<h2> NgIf Demo </h2>
-
-<p [hidden]="isShow"> Show text</p>
-
-<br/>
-<button class="btn-success" 
-(click)="toggle()">{{btnLabel}}</button>
-<br/>
-{{percentpipedemo|percent}}
-
-<br/>
-<p>pi (3.1-5): {{pi | number:'3.1-5'}}</p>
+<h2>Component Interaction</h2>
+<div class="container">
  
-<!--output '003.14000'-->
-<p>pi (3.5-5): {{pi | number:'3.5-5'}}</p>
-
-<!--output '-3' / unlike '-2' by Math.round()-->
-<p>-2.5 (1.0-0): {{-2.5 | number:'1.0-0'}}</p>
-
-<h1>Parent Component</h1>
-<app-child  [childMessage]="childMessage" (greetEvent)="greet($event)"></app-child>
+  <app-child [childMessage]="childMessage" (greetEvent)="greet($event)"></app-child>
+</div>
