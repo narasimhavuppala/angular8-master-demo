@@ -42,6 +42,7 @@ export class AppComponent {
 
   greet(name: string) {
     alert('Hey ' + name);
+ 
   }
 
   changeMe(){

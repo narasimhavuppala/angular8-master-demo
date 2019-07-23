@@ -19,7 +19,8 @@ export class AppComponent {
       (res: HttpResponse<any>) => {
         console.log(res);
         console.log(res.status);
-        this.data = res.body;
+      //  this.data = res.body;
+    this.data=    res.body['login'];
       },
       (err: HttpErrorResponse) => {
         console.log(err);

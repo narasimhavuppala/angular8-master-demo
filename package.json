@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "start-froms-demo": "ng serve forms-demo",
+    "start-http-client-demo": "ng serve httpclient-demo",
+    "start-routing": "ng serve routing-demos",
     "build": "ng build",
     "build:dev": "ng build",
     "test": "ng test",

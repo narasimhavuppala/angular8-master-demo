@@ -20,8 +20,9 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
 
           this.router.navigate(['/error']);
         }
-      }
-    );
+      } );
+
+   
 
   }
 
