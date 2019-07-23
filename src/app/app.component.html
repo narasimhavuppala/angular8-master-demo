@@ -2,9 +2,12 @@
 
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Welcome to {{ title|uppercase }}!
   </h1>
 </div>
+
+
+{{amount|currency}}
 
 <button class="btn-primary" id="change Title" (click)="changeMe()">Change Title</button>
 <h2> *ngFor Demo</h2>
@@ -27,5 +30,19 @@ Name :<input type="text" #namex />
 
 <p [hidden]="isShow"> Show text</p>
 
-
+<br/>
 <button class="btn-success" (click)="toggle()">{{btnLabel}}</button>
+<br/>
+{{percentpipedemo|percent}}
+
+<br/>
+<p>pi (3.1-5): {{pi | number:'3.1-5'}}</p>
+ 
+<!--output '003.14000'-->
+<p>pi (3.5-5): {{pi | number:'3.5-5'}}</p>
+
+<!--output '-3' / unlike '-2' by Math.round()-->
+<p>-2.5 (1.0-0): {{-2.5 | number:'1.0-0'}}</p>
+
+<h1>Parent Component</h1>
+<app-child  [childMessage]="childMessage" (greetEvent)="greet($event)"></app-child>

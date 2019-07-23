@@ -8,11 +8,24 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   // Event Binding
-  title = 'demo-project';
+  title = 'Sundeep';
+
+  pi=3.15789;
+
+
+  amount=100;
+
+  percentpipedemo=0.25;
+
+  decimalPipe=0.25367894567;
+
+  testMessage = "From Parent";
 
   isShow = false;
 
   btnLabel = 'Hide';
+
+  childMessage="Hello World";
 
   // People Names Array
   people: any[] = [];
@@ -24,5 +37,13 @@ export class AppComponent {
   toggle() {
     this.isShow = !this.isShow;
     this.btnLabel = this.isShow ? 'Show' : 'Hide';
+  }
+
+  greet(name: string) {
+    alert('Hey ' + name);
+  }
+
+  changeMe(){
+    this.title="Updated title At: " + Date.now();
   }
 }
